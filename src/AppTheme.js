@@ -15,6 +15,7 @@ export const THEMES = {
 
 export const TYPOGRAPHY = {
   DESKTOP: {
+    XXL: { fontSize: '128px' },
     H0: { fontSize: '60px' },
     H1: { fontSize: '40px' },
     H2: { fontSize: '32px' },
@@ -24,6 +25,7 @@ export const TYPOGRAPHY = {
     P: { fontSize: '16px' },
   },
   MOBILE: {
+    XXL: { fontSize: '60px' },
     H0: { fontSize: '40px' },
     H1: { fontSize: '32px' },
     H2: { fontSize: '28px' },
@@ -61,6 +63,12 @@ export const theme = createTheme({
       'sans-serif',
     ].join(','),
     subtitle1: {
+      ...TYPOGRAPHY.DESKTOP.XXL,
+      '@media (max-width:600px)': {
+        ...TYPOGRAPHY.MOBILE.XXL,
+      },
+    },
+    subtitle2: {
       ...TYPOGRAPHY.DESKTOP.H0,
       '@media (max-width:600px)': {
         ...TYPOGRAPHY.MOBILE.H0,
