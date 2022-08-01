@@ -6,7 +6,9 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Typography variant='h2'>© 2022 tim kinsman, adelaide, australia</Typography>
+      <Typography variant='h2'>
+        © {new Date().getFullYear()} tim kinsman, adelaide, australia
+      </Typography>
     </div>
   );
 };

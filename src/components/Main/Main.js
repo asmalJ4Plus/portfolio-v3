@@ -1,14 +1,24 @@
 import React from 'react';
+// import $ from 'jquery';
 import { Typography } from '@material-ui/core';
 import Panel from '../Panel/Panel';
-import { THEMES } from '../../AppTheme';
 import useStyles from './MainStyles';
 
 const Main = () => {
   const classes = useStyles();
+
+  // const handleOnClick = (id) => {
+  //   $('html,body').animate(
+  //     {
+  //       scrollTop: $(id).offset()?.top,
+  //     },
+  //     'slow',
+  //   );
+  // };
+
   return (
     <>
-      <Panel>
+      <Panel id='home'>
         <div className={classes.container}>
           <Typography variant='subtitle1'>tim kinsman</Typography>
           <Typography variant='subtitle2'>based in adelaide, australia</Typography>
@@ -20,14 +30,14 @@ const Main = () => {
           </Typography>
         </div>
       </Panel>
-      <Panel backgroundColor={THEMES.KIRYU.PRIMARY} color={THEMES.KIRYU.TEXT}>
-        <div className={classes.container}>
-          <Typography variant='subtitle1'>about</Typography>
-        </div>
-      </Panel>
-      <Panel>
+      <Panel id='work'>
         <div className={classes.container}>
           <Typography variant='subtitle1'>work</Typography>
+        </div>
+      </Panel>
+      <Panel id='about'>
+        <div className={classes.container}>
+          <Typography variant='subtitle1'>about</Typography>
         </div>
       </Panel>
     </>
