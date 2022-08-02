@@ -42,12 +42,8 @@ const Main = () => {
             </a>
           </Typography>
         </div>
-        <div
-          className={classes.arrowDownContainer}
-          onClick={() => handleOnClick('#work')}
-          aria-hidden='true'
-        >
-          <ArrowDownSVG className={classes.arrowDown} />
+        <div className={classes.arrowDownContainer}>
+          <ArrowDownSVG className={classes.arrowDown} onClick={() => handleOnClick('#work')} />
         </div>
       </Panel>
       <Panel id='work'>
