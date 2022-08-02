@@ -1,16 +1,8 @@
 import { createTheme } from '@material-ui/core';
 
-export const THEMES = {
-  MAJIMA: {
-    PRIMARY: '#FFFFFF',
-    SECONDARY: '#F7FAFC',
-    TEXT: '#2A2F45',
-  },
-  KIRYU: {
-    PRIMARY: '#082429',
-    SECONDARY: '#0B3733',
-    TEXT: '#F7FAFC',
-  },
+export const COLORS = {
+  KIRYU: '#F5F5F5',
+  MAJIMA: '#082429',
 };
 
 export const TYPOGRAPHY = {

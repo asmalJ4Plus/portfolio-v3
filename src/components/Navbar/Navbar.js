@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
 import { Typography } from '@material-ui/core';
 import useStyles from './NavbarStyles';
-import { THEMES } from '../../AppTheme';
+import { COLORS } from '../../AppTheme';
 
 const NavBar = () => {
   const classes = useStyles();
@@ -19,13 +19,13 @@ const NavBar = () => {
 
   const onScroll = () => {
     if (scrollTop('#home', '#work')) {
-      $('body').css({ 'background-color': THEMES.MAJIMA.PRIMARY, color: THEMES.MAJIMA.TEXT });
+      $('body').css({ 'background-color': COLORS.KIRYU, color: COLORS.MAJIMA });
       setPageId('home');
     } else if (scrollTop('#work', '#about')) {
-      $('body').css({ 'background-color': THEMES.KIRYU.PRIMARY, color: THEMES.KIRYU.TEXT });
+      $('body').css({ 'background-color': COLORS.MAJIMA, color: COLORS.KIRYU });
       setPageId('work');
     } else {
-      $('body').css({ 'background-color': THEMES.MAJIMA.PRIMARY, color: THEMES.MAJIMA.TEXT });
+      $('body').css({ 'background-color': COLORS.KIRYU, color: COLORS.MAJIMA });
       setPageId('about');
     }
   };
