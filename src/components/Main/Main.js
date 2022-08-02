@@ -24,6 +24,14 @@ const Main = () => {
         <div className={classes.meContainer}>
           <MeSVG />
         </div>
+        <div className={classes.keshaContainer}>
+          <Typography variant='h5'>
+            illustration{' '}
+            <a href='https://www.instagram.com/stickwhack/' target='_blank' rel='noreferrer'>
+              stickwhack
+            </a>
+          </Typography>
+        </div>
         <div className={classes.container}>
           <Typography variant='subtitle1'>tim kinsman</Typography>
           <Typography variant='subtitle2'>based in adelaide, australia</Typography>

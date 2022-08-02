@@ -28,11 +28,20 @@ const useStyles = makeStyles(() => ({
     },
   },
   meContainer: {
-    position: 'absolute',
+    position: 'fixed',
     bottom: '0',
     left: '0',
     display: 'flex',
     justifyContent: 'flex-start',
+  },
+  keshaContainer: {
+    position: 'fixed',
+    bottom: '0',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    height: '80px',
+    alignItems: 'center',
+    left: '60px',
   },
 }));
 
