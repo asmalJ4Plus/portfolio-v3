@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Typography } from '@material-ui/core';
+import { Fade } from '@timkinsman/react-components';
 import Panel from '../Panel/Panel';
 import useStyles from './MainStyles';
 import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.svg';
@@ -48,12 +49,16 @@ const Main = () => {
       </Panel>
       <Panel id='work'>
         <div className={classes.container}>
-          <Typography variant='subtitle1'>work</Typography>
+          <Fade ms={1000}>
+            <Typography variant='subtitle1'>work</Typography>
+          </Fade>
         </div>
       </Panel>
       <Panel id='about'>
         <div className={classes.container}>
-          <Typography variant='subtitle1'>about</Typography>
+          <Fade ms={1000}>
+            <Typography variant='subtitle1'>about</Typography>
+          </Fade>
         </div>
       </Panel>
     </>

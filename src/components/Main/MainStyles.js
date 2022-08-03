@@ -42,6 +42,7 @@ const useStyles = makeStyles(() => ({
     height: '80px',
     alignItems: 'center',
     left: '60px',
+    zIndex: 99,
   },
 }));
 
