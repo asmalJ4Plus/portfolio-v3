@@ -23,7 +23,9 @@ const Main = () => {
     <>
       <Panel id='home'>
         <div className={classes.meContainer}>
-          <MeSVG />
+          <Fade ms={1000} slide='right'>
+            <MeSVG />
+          </Fade>
         </div>
         <div className={classes.keshaContainer}>
           <Typography variant='h5'>
@@ -49,14 +51,14 @@ const Main = () => {
       </Panel>
       <Panel id='work'>
         <div className={classes.container}>
-          <Fade ms={1000}>
+          <Fade ms={1000} slide='right'>
             <Typography variant='subtitle1'>work</Typography>
           </Fade>
         </div>
       </Panel>
       <Panel id='about'>
         <div className={classes.container}>
-          <Fade ms={1000}>
+          <Fade ms={1000} slide='right'>
             <Typography variant='subtitle1'>about</Typography>
           </Fade>
         </div>
