@@ -6,7 +6,7 @@ export type AppReducerProps = {
 };
 
 const initialState = {
-  page: 'home',
+  page: 'KEEBS',
 };
 
 export const appReducer = (state = initialState, action: UpdatePageAction) => {

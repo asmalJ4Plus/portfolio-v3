@@ -33,6 +33,11 @@ const App = ({ updatePage }: AppProps) => {
   };
 
   useEffect(() => {
+    $('body').css({ 'background-color': COLORS.KIRYU, color: COLORS.MAJIMA });
+    updatePage('home');
+  }, []);
+
+  useEffect(() => {
     document.addEventListener('scroll', onScroll);
 
     return () => {
