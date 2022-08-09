@@ -7,7 +7,6 @@ const useStyles = makeStyles(() => ({
     height: '80px',
     justifyContent: 'space-between',
     padding: '0 60px',
-    position: 'fixed',
     width: '-webkit-fill-available',
   },
   logo: {
@@ -29,7 +28,7 @@ const useStyles = makeStyles(() => ({
     opacity: 0.4,
     transition: 'opacity 0.25s',
     '&:hover': {
-      opacity: 1,
+      opacity: '1 !important',
     },
   },
   music: {

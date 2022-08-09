@@ -3,8 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier",
-    "plugin:prettier/recommended"],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -21,9 +20,9 @@
       }
     ],
     "react/jsx-filename-extension": [
-      1,
+      2,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
     "react/function-component-definition": [
