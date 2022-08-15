@@ -4,7 +4,7 @@ import useStyles from './NavbarStyles';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
 import { connect } from 'react-redux';
-import ControlledFade from '../ControlledFade/ControlledFade';
+import { Box, Fade } from '@timkinsman/react-components';
 
 type NavBarProps = {
   page?: string;
@@ -14,16 +14,16 @@ const NavBar = ({ page }: NavBarProps) => {
   const classes = useStyles();
 
   return (
-    <ControlledFade
-      show={page === 'home'}
-      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 999 }}
+    <Fade
+      appear={page === 'home'}
       slide='down'
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 999, width: '100%' }}
     >
-      <div className={classes.container}>
-        <div className={classes.logo}>
+      <Box className={classes.container}>
+        <Box className={classes.logo}>
           <Typography variant='h2'>timkinsman</Typography>
-        </div>
-        <div className={classes.pages}>
+        </Box>
+        <Box className={classes.pages}>
           <Typography
             variant='h2'
             className={classes.page}
@@ -48,12 +48,12 @@ const NavBar = ({ page }: NavBarProps) => {
           >
             about
           </Typography>
-        </div>
-        <div className={classes.music}>
+        </Box>
+        <Box className={classes.music}>
           <Typography variant='h2'>music</Typography>
-        </div>
-      </div>
-    </ControlledFade>
+        </Box>
+      </Box>
+    </Fade>
   );
 };
 

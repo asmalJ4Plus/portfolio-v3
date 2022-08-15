@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@timkinsman/react-components": "git+https://github.com/timkinsman/react-components.git",
+    "@timkinsman/react-components": "^1.1.7",
     "jquery": "^3.6.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -27,8 +27,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.js{,x}",
     "lint": "eslint src/**/*.js{,x}",
-    "prepare": "husky install",
-    "add:@timkinsman/react-components": "yarn link @timkinsman/react-components"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.js{,x}": [

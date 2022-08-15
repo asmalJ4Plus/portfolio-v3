@@ -1,4 +1,5 @@
 import { Typography } from '@material-ui/core';
+import { Box } from '@timkinsman/react-components';
 import React from 'react';
 import Panel from '../Panel/Panel';
 import useStyles from './NotFoundStyles';
@@ -8,9 +9,9 @@ const NotFound = () => {
 
   return (
     <Panel>
-      <div className={classes.container}>
+      <Box className={classes.container}>
         <Typography variant='subtitle1'>not found</Typography>
-      </div>
+      </Box>
     </Panel>
   );
 };

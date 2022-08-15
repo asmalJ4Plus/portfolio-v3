@@ -6,8 +6,8 @@ import useStyles from './MainStyles';
 import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.svg';
 import { ReactComponent as MeSVG } from '../../assets/images/me.svg';
 import { scrollTo } from '../../utils/helpers';
-import ControlledFade from '../ControlledFade/ControlledFade';
 import { StoreState } from '../../reducers/rootReducer';
+import { Box, Fade } from '@timkinsman/react-components';
 
 type MainProps = {
   page?: string;
@@ -19,13 +19,13 @@ const Main = ({ page }: MainProps) => {
   return (
     <>
       <Panel id='home'>
-        <ControlledFade show={page === 'home'} slide='left'>
-          <div className={classes.image}>
+        <Fade appear={page === 'home'} slide='left'>
+          <Box className={classes.image}>
             <MeSVG />
-          </div>
-        </ControlledFade>
-        <div className={classes.container}>
-          <ControlledFade show={page === 'home'} slide='right'>
+          </Box>
+        </Fade>
+        <Box className={classes.container}>
+          <Fade appear={page === 'home'} slide='right'>
             <Typography variant='subtitle1'>tim kinsman</Typography>
             <Typography variant='subtitle2'>based in adelaide, australia</Typography>
             <Typography variant='subtitle2'>
@@ -34,25 +34,25 @@ const Main = ({ page }: MainProps) => {
                 eatclub
               </a>
             </Typography>
-          </ControlledFade>
-        </div>
-        <div className={classes.arrowDownContainer}>
+          </Fade>
+        </Box>
+        <Box className={classes.arrowDownContainer}>
           <ArrowDownSVG className={classes.arrowDown} onClick={() => scrollTo('#work')} />
-        </div>
+        </Box>
       </Panel>
       <Panel id='work'>
-        <div className={classes.container}>
-          <ControlledFade show={page === 'work'} slide='right'>
+        <Box className={classes.container}>
+          <Fade appear={page === 'work'} slide='right'>
             <Typography variant='subtitle1'>work</Typography>
-          </ControlledFade>
-        </div>
+          </Fade>
+        </Box>
       </Panel>
       <Panel id='about'>
-        <div className={classes.container}>
-          <ControlledFade show={page === 'about'} slide='right'>
+        <Box className={classes.container}>
+          <Fade appear={page === 'about'} slide='right'>
             <Typography variant='subtitle1'>about</Typography>
-          </ControlledFade>
-        </div>
+          </Fade>
+        </Box>
       </Panel>
     </>
   );
