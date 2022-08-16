@@ -1,10 +1,9 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
 import useStyles from './NavbarStyles';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
 import { connect } from 'react-redux';
-import { Box, Fade } from '@timkinsman/react-components';
+import { Box, Fade, Typography } from '@timkinsman/react-components';
 
 type NavBarProps = {
   page?: string;
@@ -28,25 +27,22 @@ const NavBar = ({ page }: NavBarProps) => {
             variant='h2'
             className={classes.page}
             style={{ opacity: page === 'home' ? 1 : 0.4 }}
-            onClick={() => scrollTo('#home')}
           >
-            home
+            <Box onClick={() => scrollTo('#home')}>home</Box>
           </Typography>
           <Typography
             variant='h2'
             className={classes.page}
             style={{ opacity: page === 'work' ? 1 : 0.4 }}
-            onClick={() => scrollTo('#work')}
           >
-            work
+            <Box onClick={() => scrollTo('#work')}>work</Box>
           </Typography>
           <Typography
             variant='h2'
             className={classes.page}
             style={{ opacity: page === 'about' ? 1 : 0.4 }}
-            onClick={() => scrollTo('#about')}
           >
-            about
+            <Box onClick={() => scrollTo('#about')}>about</Box>
           </Typography>
         </Box>
         <Box className={classes.music}>

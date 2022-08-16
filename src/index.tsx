@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThemeProvider } from '@material-ui/styles';
 import ReactDOM from 'react-dom/client';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -10,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import rootReducer from './reducers/rootReducer';
 import './satoshi.css';
 import './index.css';
+import { ThemeProvider } from '@timkinsman/react-components';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

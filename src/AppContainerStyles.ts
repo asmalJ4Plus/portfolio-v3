@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
+import { createStyles } from '@timkinsman/react-components';
 
-const useStyles = makeStyles(() => ({
+const useStyles = createStyles(() => ({
   container: {
     // padding: '0 60px',
   },

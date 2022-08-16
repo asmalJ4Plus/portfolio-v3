@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
 import Panel from '../Panel/Panel';
 import useStyles from './MainStyles';
@@ -7,7 +6,7 @@ import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.sv
 import { ReactComponent as MeSVG } from '../../assets/images/me.svg';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
-import { Box, Fade } from '@timkinsman/react-components';
+import { Box, Fade, Typography } from '@timkinsman/react-components';
 
 type MainProps = {
   page?: string;
@@ -25,10 +24,18 @@ const Main = ({ page }: MainProps) => {
           </Box>
         </Fade>
         <Box className={classes.container}>
-          <Fade appear={page === 'home'} slide='right'>
-            <Typography variant='subtitle1'>tim kinsman</Typography>
-            <Typography variant='subtitle2'>based in adelaide, australia</Typography>
-            <Typography variant='subtitle2'>
+          <Fade
+            appear={page === 'home'}
+            slide='right'
+            style={{
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography variant='subheading1'>tim kinsman</Typography>
+            <Typography variant='subheading2'>based in adelaide, australia</Typography>
+            <Typography variant='subheading2'>
               front-end dev at{' '}
               <a href='https://eatclub.com.au/' target='_blank' rel='noreferrer'>
                 eatclub
@@ -43,14 +50,14 @@ const Main = ({ page }: MainProps) => {
       <Panel id='work'>
         <Box className={classes.container}>
           <Fade appear={page === 'work'} slide='right'>
-            <Typography variant='subtitle1'>work</Typography>
+            <Typography variant='subheading1'>work</Typography>
           </Fade>
         </Box>
       </Panel>
       <Panel id='about'>
         <Box className={classes.container}>
           <Fade appear={page === 'about'} slide='right'>
-            <Typography variant='subtitle1'>about</Typography>
+            <Typography variant='subheading1'>about</Typography>
           </Fade>
         </Box>
       </Panel>
