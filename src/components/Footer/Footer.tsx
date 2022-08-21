@@ -6,7 +6,7 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Box className={classes.container}>
-      <Typography variant='h2'>
+      <Typography variant='h5'>
         © {new Date().getFullYear()} tim kinsman, adelaide, australia
       </Typography>
     </Box>

@@ -20,25 +20,25 @@ const NavBar = ({ page }: NavBarProps) => {
     >
       <Box className={classes.container}>
         <Box className={classes.logo}>
-          <Typography variant='h2'>timkinsman</Typography>
+          <Typography variant='h4'>timkinsman</Typography>
         </Box>
         <Box className={classes.pages}>
           <Typography
-            variant='h2'
+            variant='h4'
             className={classes.page}
             style={{ opacity: page === 'home' ? 1 : 0.4 }}
           >
             <Box onClick={() => scrollTo('#home')}>home</Box>
           </Typography>
           <Typography
-            variant='h2'
+            variant='h4'
             className={classes.page}
             style={{ opacity: page === 'work' ? 1 : 0.4 }}
           >
             <Box onClick={() => scrollTo('#work')}>work</Box>
           </Typography>
           <Typography
-            variant='h2'
+            variant='h4'
             className={classes.page}
             style={{ opacity: page === 'about' ? 1 : 0.4 }}
           >
@@ -46,7 +46,7 @@ const NavBar = ({ page }: NavBarProps) => {
           </Typography>
         </Box>
         <Box className={classes.music}>
-          <Typography variant='h2'>music</Typography>
+          <Typography variant='h4'>music</Typography>
         </Box>
       </Box>
     </Fade>

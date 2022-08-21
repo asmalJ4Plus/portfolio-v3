@@ -1746,10 +1746,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@timkinsman/react-components@^1.1.10":
-  version "1.1.10"
-  resolved "https://npm.pkg.github.com/download/@timkinsman/react-components/1.1.10/1ea0b5ebf0ecc0cc5c850e24cfb9e06ca20a411d#1ea0b5ebf0ecc0cc5c850e24cfb9e06ca20a411d"
-  integrity sha512-NpxcTBdmoSXgBCGs64zLljBBGoRYnGZHCEXy53JctWb5WbHbzfb5Pc/b5Ttm8VkwfIH5sKhCMY/s7XcV5XWGZw==
+"@timkinsman/react-components@^1.2.3":
+  version "1.2.3"
+  resolved "https://npm.pkg.github.com/download/@timkinsman/react-components/1.2.3/70c7f9cada88f903347324f06c917e33739da9bb#70c7f9cada88f903347324f06c917e33739da9bb"
+  integrity sha512-bpR5aarNWmNYqEE6KRYRRtV+HVroUBh/wTbXQ2KbU4NSfkuhGi/odA1WTrJpxtsYdaDRBmxfH/fSG49uzFXJ7A==
 
 "@tootallnate/once@1":
   version "1.1.2"

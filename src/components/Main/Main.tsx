@@ -33,9 +33,13 @@ const Main = ({ page }: MainProps) => {
               flexDirection: 'column',
             }}
           >
-            <Typography variant='subheading1'>tim kinsman</Typography>
-            <Typography variant='subheading2'>based in adelaide, australia</Typography>
-            <Typography variant='subheading2'>
+            <Typography variant='h1' style={{ margin: 0 }}>
+              tim kinsman
+            </Typography>
+            <Typography variant='h2' style={{ margin: 0 }}>
+              based in adelaide, australia
+            </Typography>
+            <Typography variant='h2' style={{ margin: 0 }}>
               front-end dev at{' '}
               <a href='https://eatclub.com.au/' target='_blank' rel='noreferrer'>
                 eatclub
@@ -50,14 +54,16 @@ const Main = ({ page }: MainProps) => {
       <Panel id='work'>
         <Box className={classes.container}>
           <Fade appear={page === 'work'} slide='right'>
-            <Typography variant='subheading1'>work</Typography>
+            <Typography variant='h1' style={{ color: 'inherit' }}>
+              work
+            </Typography>
           </Fade>
         </Box>
       </Panel>
       <Panel id='about'>
         <Box className={classes.container}>
           <Fade appear={page === 'about'} slide='right'>
-            <Typography variant='subheading1'>about</Typography>
+            <Typography variant='h1'>about</Typography>
           </Fade>
         </Box>
       </Panel>

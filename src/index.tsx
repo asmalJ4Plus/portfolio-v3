@@ -4,7 +4,6 @@ import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import App from './App';
-import { theme } from './AppTheme';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './reducers/rootReducer';
 import './satoshi.css';
@@ -27,7 +26,7 @@ const store = createStore(rootReducer, applyMiddleware(...middlewares));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <App />
       </ThemeProvider>
     </Provider>

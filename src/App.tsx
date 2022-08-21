@@ -6,34 +6,45 @@ import AppContainer from './AppContainer';
 import NavBar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { isBetween } from './utils/helpers';
-import { COLORS } from './AppTheme';
 import { updatePageAction } from './actions/appActions';
-import { StoreState } from './reducers/rootReducer';
+import { useTheme } from '@timkinsman/react-components';
 
 type AppProps = {
   updatePage: Function;
 };
 
 const App = ({ updatePage }: AppProps) => {
+  const theme = useTheme();
+
+  const lightThemeCSS = {
+    'background-color': theme.palette.background.default,
+    color: theme.palette.text.primary,
+  };
+
+  const darkThemeCSS = {
+    'background-color': theme.palette.text.primary,
+    color: theme.palette.background.default,
+  };
+
   window.onbeforeunload = () => {
     window.scrollTo(0, 0);
   };
 
   const onScroll = () => {
     if (isBetween('#home', '#work')) {
-      $('body').css({ 'background-color': COLORS.KIRYU, color: COLORS.MAJIMA });
+      $('body').css(lightThemeCSS);
       updatePage('home');
     } else if (isBetween('#work', '#about')) {
-      $('body').css({ 'background-color': COLORS.MAJIMA, color: COLORS.KIRYU });
+      $('body').css(darkThemeCSS);
       updatePage('work');
     } else {
-      $('body').css({ 'background-color': COLORS.KIRYU, color: COLORS.MAJIMA });
+      $('body').css(lightThemeCSS);
       updatePage('about');
     }
   };
 
   useEffect(() => {
-    $('body').css({ 'background-color': COLORS.KIRYU, color: COLORS.MAJIMA });
+    $('body').css(lightThemeCSS);
     updatePage('home');
   }, []);
 
