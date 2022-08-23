@@ -1,4 +1,4 @@
-import { createStyles } from '@timkinsman/react-components';
+import { createStyles } from 'petald';
 
 const useStyles = createStyles(() => ({
   container: {

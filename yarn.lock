@@ -1746,11 +1746,6 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@timkinsman/react-components@^1.2.3":
-  version "1.2.3"
-  resolved "https://npm.pkg.github.com/download/@timkinsman/react-components/1.2.3/70c7f9cada88f903347324f06c917e33739da9bb#70c7f9cada88f903347324f06c917e33739da9bb"
-  integrity sha512-bpR5aarNWmNYqEE6KRYRRtV+HVroUBh/wTbXQ2KbU4NSfkuhGi/odA1WTrJpxtsYdaDRBmxfH/fSG49uzFXJ7A==
-
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -6678,6 +6673,11 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==
+
+petald@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/petald/-/petald-1.2.5.tgz#1dfad187c605c6414a99688e2205efaf42d1ba26"
+  integrity sha512-+mSiQOfB9Al8LBzGYwDWioRVxHG9sYodMbUc61BU1RVfOKsN2rXGAocy1WElt75wVxCWAUUCtukc/OU3ABmAWw==
 
 picocolors@^0.2.1:
   version "0.2.1"

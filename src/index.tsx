@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ThemeProvider } from 'petald';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
@@ -8,7 +9,6 @@ import reportWebVitals from './reportWebVitals';
 import rootReducer from './reducers/rootReducer';
 import './satoshi.css';
 import './index.css';
-import { ThemeProvider } from '@timkinsman/react-components';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
+import { useTheme } from 'petald';
 import SwitchRoutes from './routes/SwitchRoutes';
 import AppContainer from './AppContainer';
 import NavBar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { isBetween } from './utils/helpers';
 import { updatePageAction } from './actions/appActions';
-import { useTheme } from '@timkinsman/react-components';
 
 type AppProps = {
   updatePage: Function;

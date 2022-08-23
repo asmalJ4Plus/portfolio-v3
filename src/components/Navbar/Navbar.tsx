@@ -1,9 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Box, Fade, Space, Typography } from 'petald';
 import useStyles from './NavbarStyles';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
-import { connect } from 'react-redux';
-import { Box, Fade, Typography } from '@timkinsman/react-components';
 
 type NavBarProps = {
   page?: string;
@@ -22,7 +22,7 @@ const NavBar = ({ page }: NavBarProps) => {
         <Box className={classes.logo}>
           <Typography variant='h4'>timkinsman</Typography>
         </Box>
-        <Box className={classes.pages}>
+        <Space gap='large'>
           <Typography
             variant='h4'
             className={classes.page}
@@ -44,7 +44,7 @@ const NavBar = ({ page }: NavBarProps) => {
           >
             <Box onClick={() => scrollTo('#about')}>about</Box>
           </Typography>
-        </Box>
+        </Space>
         <Box className={classes.music}>
           <Typography variant='h4'>music</Typography>
         </Box>

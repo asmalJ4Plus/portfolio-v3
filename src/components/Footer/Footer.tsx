@@ -1,4 +1,4 @@
-import { Box, Typography } from '@timkinsman/react-components';
+import { Box, Typography } from 'petald';
 import React from 'react';
 import useStyles from './FooterStyles';
 

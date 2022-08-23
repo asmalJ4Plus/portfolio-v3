@@ -1,4 +1,4 @@
-import { Box, Typography } from '@timkinsman/react-components';
+import { Box, Typography } from 'petald';
 import React from 'react';
 import Panel from '../Panel/Panel';
 import useStyles from './NotFoundStyles';
@@ -9,7 +9,7 @@ const NotFound = () => {
   return (
     <Panel>
       <Box className={classes.container}>
-        <Typography variant='subheading1'>not found</Typography>
+        <Typography variant='h2'>you don't belong here..</Typography>
       </Box>
     </Panel>
   );

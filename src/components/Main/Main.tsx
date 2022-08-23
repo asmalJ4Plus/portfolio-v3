@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Fade, Pill, Space, Typography } from 'petald';
 import { connect } from 'react-redux';
 import Panel from '../Panel/Panel';
 import useStyles from './MainStyles';
@@ -6,7 +7,6 @@ import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.sv
 import { ReactComponent as MeSVG } from '../../assets/images/me.svg';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
-import { Box, Fade, Typography } from '@timkinsman/react-components';
 
 type MainProps = {
   page?: string;
@@ -57,6 +57,12 @@ const Main = ({ page }: MainProps) => {
             <Typography variant='h1' style={{ color: 'inherit' }}>
               work
             </Typography>
+            <Space>
+              <Pill label='EatClub' onClick={() => {}} />
+              <Pill label='Allscripts' onClick={() => {}} />
+              <Pill label='Brighter Futures Group' onClick={() => {}} />
+              <Pill label='Freelancing' onClick={() => {}} />
+            </Space>
           </Fade>
         </Box>
       </Panel>

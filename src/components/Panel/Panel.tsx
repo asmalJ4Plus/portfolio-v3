@@ -1,4 +1,4 @@
-import { Box } from '@timkinsman/react-components';
+import { Box } from 'petald';
 import React from 'react';
 import useStyles from './PanelStyles';
 
