@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Fade, Pill, Space, Typography } from 'petald';
 import { connect } from 'react-redux';
 import Panel from '../Panel/Panel';
@@ -7,6 +7,7 @@ import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.sv
 import { ReactComponent as MeSVG } from '../../assets/images/me.svg';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
+import { works } from '../../context';
 
 type MainProps = {
   page?: string;
@@ -14,6 +15,7 @@ type MainProps = {
 
 const Main = ({ page }: MainProps) => {
   const classes = useStyles();
+  const [where, setWhere] = useState(works[0].where);
 
   return (
     <>
@@ -33,16 +35,12 @@ const Main = ({ page }: MainProps) => {
               flexDirection: 'column',
             }}
           >
-            <Typography variant='h1' style={{ margin: 0 }}>
-              tim kinsman
-            </Typography>
-            <Typography variant='h2' style={{ margin: 0 }}>
-              based in adelaide, australia
-            </Typography>
-            <Typography variant='h2' style={{ margin: 0 }}>
+            <Typography variant='h1'>tim kinsman</Typography>
+            <Typography variant='h2'>based in adelaide, australia</Typography>
+            <Typography variant='h2'>
               front-end dev at{' '}
               <a href='https://eatclub.com.au/' target='_blank' rel='noreferrer'>
-                eatclub
+                EatClub
               </a>
             </Typography>
           </Fade>
@@ -54,14 +52,38 @@ const Main = ({ page }: MainProps) => {
       <Panel id='work'>
         <Box className={classes.container}>
           <Fade appear={page === 'work'} slide='right'>
-            <Typography variant='h1' style={{ color: 'inherit' }}>
-              work
-            </Typography>
-            <Space>
-              <Pill label='EatClub' onClick={() => {}} />
-              <Pill label='Allscripts' onClick={() => {}} />
-              <Pill label='Brighter Futures Group' onClick={() => {}} />
-              <Pill label='Freelancing' onClick={() => {}} />
+            <Space direction='vertical' gap='large' style={{ paddingBottom: '128px' }}>
+              <Typography variant='h1' style={{ color: 'inherit' }}>
+                work
+              </Typography>
+              <Space>
+                {works.map((work, i) => (
+                  <Pill
+                    label={work.where}
+                    onClick={() => setWhere(work.where)}
+                    variant={where === work.where ? 'filled' : 'outlined'}
+                  />
+                ))}
+              </Space>
+              <Box>
+                {works.map((work) => (
+                  <Box style={{ position: 'absolute' }}>
+                    <Fade appear={where === work.where} slide='right'>
+                      <Space direction='vertical'>
+                        <Typography variant='h3' style={{ color: 'inherit' }}>
+                          {work.where}
+                        </Typography>
+                        <Typography variant='h5' style={{ color: 'inherit' }}>
+                          {work.role} | {work.when}
+                        </Typography>
+                        <Typography variant='body1' style={{ color: 'inherit' }}>
+                          {work.what}
+                        </Typography>
+                      </Space>
+                    </Fade>
+                  </Box>
+                ))}
+              </Box>
             </Space>
           </Fade>
         </Box>

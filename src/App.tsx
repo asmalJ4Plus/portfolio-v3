@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
-import { useTheme } from 'petald';
+import { Layout, Typography, useTheme } from 'petald';
 import SwitchRoutes from './routes/SwitchRoutes';
-import AppContainer from './AppContainer';
-import NavBar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import { isBetween } from './utils/helpers';
 import { updatePageAction } from './actions/appActions';
+import Footer from './components/Footer/Footer';
 
 type AppProps = {
   updatePage: Function;
@@ -57,11 +56,17 @@ const App = ({ updatePage }: AppProps) => {
   }, []);
 
   return (
-    <AppContainer>
-      <NavBar />
-      <SwitchRoutes />
-      <Footer />
-    </AppContainer>
+    <Layout>
+      <Layout.Header fixed>
+        <Header />
+      </Layout.Header>
+      <Layout.Content>
+        <SwitchRoutes />
+      </Layout.Content>
+      <Layout.Footer>
+        <Footer />
+      </Layout.Footer>
+    </Layout>
   );
 };
 
