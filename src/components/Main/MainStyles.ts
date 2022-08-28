@@ -8,18 +8,18 @@ const useStyles = createStyles(() => ({
     flexDirection: 'column',
     height: '100%',
   },
-  arrowDownContainer: {
+  arrowContainer: {
     position: 'absolute',
     bottom: '0',
     left: '0',
     right: '0',
     margin: '0 auto',
-    height: '80px',
+    height: '64px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  arrowDown: {
+  arrow: {
     opacity: '0.4',
     transition: 'opacity 0.25s',
     '&:hover': {

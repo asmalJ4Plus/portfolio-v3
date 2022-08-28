@@ -45,13 +45,14 @@ const Main = ({ page }: MainProps) => {
             </Typography>
           </Fade>
         </Box>
-        <Box className={classes.arrowDownContainer}>
-          <ArrowDownSVG className={classes.arrowDown} onClick={() => scrollTo('#work')} />
-        </Box>
+        <Fade appear={page === 'home'} slide='down' style={{width: 'unset'}}>
+        <Box className={classes.arrowContainer}>
+          <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#work')} />
+        </Box></Fade>
       </Panel>
       <Panel id='work'>
         <Box className={classes.container}>
-          <Fade appear={page === 'work'} slide='right'>
+          <Fade appear={page === 'work'} slide='right' style={{maxWidth: '680px', width: '100%'}}>
             <Space direction='vertical' gap='large' style={{ paddingBottom: '128px' }}>
               <Typography variant='h1' style={{ color: 'inherit' }}>
                 work
@@ -90,11 +91,18 @@ const Main = ({ page }: MainProps) => {
       </Panel>
       <Panel id='about'>
         <Box className={classes.container}>
-          <Fade appear={page === 'about'} slide='right'>
+          <Fade appear={page === 'about'} slide='right' style={{maxWidth: '680px', width: '100%'}}>
             <Typography variant='h1'>about</Typography>
+                      <Space direction='vertical'>
+            <Typography variant='h3'>Hi there!</Typography>
+            <Typography variant='h5'>I'm Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to me</Typography>
+            <Typography variant='body1'>Contact | Discord, Email, GitHub, LinkedIn</Typography>
+                      </Space>
           </Fade>
         </Box>
       </Panel>
+      <Fade appear={page === 'work' || page === 'about'} slide='down' style={{width: 'unset', position: 'fixed', bottom: 0, right: '64px', height: '64px', transform: 'rotate(180deg)', display: 'flex', alignItems: 'center'}}>
+          <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#home')} /></Fade>
     </>
   );
 };
