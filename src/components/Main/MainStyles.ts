@@ -31,7 +31,10 @@ const useStyles = createStyles(() => ({
     position: 'absolute',
     height: '100vh',
     display: 'flex',
-    alignItems: 'flex-end',
+    alignItems: 'center',
+    marginLeft: '64px',
+    filter: 'opacity(60%)',
+    color: '#D1603D',
   },
 }));
 

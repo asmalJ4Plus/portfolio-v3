@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Panel from '../Panel/Panel';
 import useStyles from './MainStyles';
 import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.svg';
-import { ReactComponent as MeSVG } from '../../assets/images/me.svg';
+import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
 import { scrollTo } from '../../utils/helpers';
 import { StoreState } from '../../reducers/rootReducer';
 import { works } from '../../context';
@@ -22,7 +22,7 @@ const Main = ({ page }: MainProps) => {
       <Panel id='home'>
         <Fade appear={page === 'home'} slide='left'>
           <Box className={classes.image}>
-            <MeSVG />
+            <TimySVG />
           </Box>
         </Fade>
         <Box className={classes.container}>
@@ -45,14 +45,15 @@ const Main = ({ page }: MainProps) => {
             </Typography>
           </Fade>
         </Box>
-        <Fade appear={page === 'home'} slide='down' style={{width: 'unset'}}>
-        <Box className={classes.arrowContainer}>
-          <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#work')} />
-        </Box></Fade>
+        <Fade appear={page === 'home'} slide='down' style={{ width: 'unset' }}>
+          <Box className={classes.arrowContainer}>
+            <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#work')} />
+          </Box>
+        </Fade>
       </Panel>
       <Panel id='work'>
         <Box className={classes.container}>
-          <Fade appear={page === 'work'} slide='right' style={{maxWidth: '680px', width: '100%'}}>
+          <Fade appear={page === 'work'} slide='right' style={{ maxWidth: '680px', width: '100%' }}>
             <Space direction='vertical' gap='large' style={{ paddingBottom: '128px' }}>
               <Typography variant='h1' style={{ color: 'inherit' }}>
                 work
@@ -91,18 +92,38 @@ const Main = ({ page }: MainProps) => {
       </Panel>
       <Panel id='about'>
         <Box className={classes.container}>
-          <Fade appear={page === 'about'} slide='right' style={{maxWidth: '680px', width: '100%'}}>
+          <Fade
+            appear={page === 'about'}
+            slide='right'
+            style={{ maxWidth: '680px', width: '100%' }}
+          >
             <Typography variant='h1'>about</Typography>
-                      <Space direction='vertical'>
-            <Typography variant='h3'>Hi there!</Typography>
-            <Typography variant='h5'>I'm Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to me</Typography>
-            <Typography variant='body1'>Contact | Discord, Email, GitHub, LinkedIn</Typography>
-                      </Space>
+            <Space direction='vertical'>
+              <Typography variant='h3'>Hi there!</Typography>
+              <Typography variant='h5'>
+                I'm Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to me
+              </Typography>
+              <Typography variant='body1'>Contact | Discord, Email, GitHub, LinkedIn</Typography>
+            </Space>
           </Fade>
         </Box>
       </Panel>
-      <Fade appear={page === 'work' || page === 'about'} slide='down' style={{width: 'unset', position: 'fixed', bottom: 0, right: '64px', height: '64px', transform: 'rotate(180deg)', display: 'flex', alignItems: 'center'}}>
-          <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#home')} /></Fade>
+      <Fade
+        appear={page === 'work' || page === 'about'}
+        slide='down'
+        style={{
+          width: 'unset',
+          position: 'fixed',
+          bottom: 0,
+          right: '64px',
+          height: '64px',
+          transform: 'rotate(180deg)',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#home')} />
+      </Fade>
     </>
   );
 };
