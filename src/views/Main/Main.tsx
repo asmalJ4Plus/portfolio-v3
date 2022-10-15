@@ -1,12 +1,12 @@
 import { Box, Fade, Pill, Space, Typography } from 'petald';
 import { useState } from 'react';
-import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.svg';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
 import { Panel } from '../../components/Panel';
 import { works } from '../../utils/constants';
 import { scrollTo } from '../../utils/helpers';
 import { useAppSelector } from '../../utils/hooks';
 import useStyles from './Main.styles';
+import { Pagination } from './Pagination/Pagination';
 
 export const Main = () => {
   const classes = useStyles();
@@ -41,11 +41,6 @@ export const Main = () => {
             </Typography>
           </Fade>
         </Box>
-        <Fade appear={page === 'home'} slide='down' style={{ width: 'unset' }}>
-          <Box className={classes.arrowContainer}>
-            <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#work')} />
-          </Box>
-        </Fade>
       </Panel>
       <Panel id='work'>
         <Box className={classes.container}>
@@ -135,15 +130,15 @@ export const Main = () => {
         style={{
           width: 'unset',
           position: 'fixed',
-          bottom: 0,
+          top: '50%',
           right: '64px',
           height: '64px',
-          transform: 'rotate(180deg)',
+          transform: 'translateY(-50%)',
           display: 'flex',
           alignItems: 'center',
         }}
       >
-        <ArrowDownSVG className={classes.arrow} onClick={() => scrollTo('#home')} />
+        <Pagination />
       </Fade>
     </>
   );
