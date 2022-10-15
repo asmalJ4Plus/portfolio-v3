@@ -9,7 +9,7 @@ const NotFound = () => {
   return (
     <Panel>
       <Box className={classes.container}>
-        <Typography variant='h2'>you don't belong here..</Typography>
+        <Typography variant='h2'>you don&apos;t belong here..</Typography>
       </Box>
     </Panel>
   );

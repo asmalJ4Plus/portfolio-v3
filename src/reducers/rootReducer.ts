@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { appReducer, AppReducerProps } from './appReducer';
+import { AppReducerProps, appReducer } from './appReducer';
 
 export type StoreState = {
   app: AppReducerProps;

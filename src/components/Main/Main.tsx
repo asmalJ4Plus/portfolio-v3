@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
 import { Box, Fade, Pill, Space, Typography } from 'petald';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import Panel from '../Panel/Panel';
-import useStyles from './MainStyles';
 import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.svg';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
-import { scrollTo } from '../../utils/helpers';
-import { StoreState } from '../../reducers/rootReducer';
 import { works } from '../../context';
+import { StoreState } from '../../reducers/rootReducer';
+import { scrollTo } from '../../utils/helpers';
+import Panel from '../Panel/Panel';
+import useStyles from './MainStyles';
 
 type MainProps = {
   page?: string;
@@ -61,6 +61,7 @@ const Main = ({ page }: MainProps) => {
               <Space>
                 {works.map((work, i) => (
                   <Pill
+                    key={i}
                     label={work.where}
                     onClick={() => setWhere(work.where)}
                     variant={where === work.where ? 'filled' : 'outlined'}
@@ -68,8 +69,8 @@ const Main = ({ page }: MainProps) => {
                 ))}
               </Space>
               <Box>
-                {works.map((work) => (
-                  <Box style={{ position: 'absolute' }}>
+                {works.map((work, i) => (
+                  <Box style={{ position: 'absolute' }} key={i}>
                     <Fade appear={where === work.where} slide='right'>
                       <Space direction='vertical'>
                         <Typography variant='h3' style={{ color: 'inherit' }}>
@@ -101,7 +102,8 @@ const Main = ({ page }: MainProps) => {
             <Space direction='vertical'>
               <Typography variant='h3'>Hi there!</Typography>
               <Typography variant='h5'>
-                I'm Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to me
+                I&apos;m Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to
+                me
               </Typography>
               <Typography variant='body1'>Contact | Discord, Email, GitHub, LinkedIn</Typography>
             </Space>

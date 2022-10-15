@@ -1,14 +1,14 @@
+import { ThemeProvider } from 'petald';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from 'petald';
-import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import rootReducer from './reducers/rootReducer';
-import './satoshi.css';
 import './index.css';
+import rootReducer from './reducers/rootReducer';
+import reportWebVitals from './reportWebVitals';
+import './satoshi.css';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

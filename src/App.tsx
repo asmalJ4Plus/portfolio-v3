@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 import $ from 'jquery';
-import { Layout, Typography, useTheme } from 'petald';
-import SwitchRoutes from './routes/SwitchRoutes';
-import Header from './components/Header/Header';
-import { isBetween } from './utils/helpers';
+import { Layout, useTheme } from 'petald';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { updatePageAction } from './actions/appActions';
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import SwitchRoutes from './routes/SwitchRoutes';
+import { isBetween } from './utils/helpers';
 
 type AppProps = {
-  updatePage: Function;
+  updatePage: (page: string) => void;
 };
 
 const App = ({ updatePage }: AppProps) => {

@@ -24,7 +24,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "eslint src/**/*.ts{,x}",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc.json",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -51,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
     "@types/jest": "^28.1.6",
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.6.5",

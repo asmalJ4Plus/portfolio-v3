@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import routes from './Routes';
-
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 // Routes
 import NotFound from '../components/NotFound/NotFound';
+import routes from './Routes';
 
 const SwitchRoutes = () => (
   <Router>
