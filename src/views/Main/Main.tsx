@@ -102,10 +102,28 @@ export const Main = () => {
                 me
               </Typography>
               <Space>
-                <Typography variant='body1'><a href='https://discordapp.com/users/355321462032171009/' target='_blank' rel='noreferrer'>Discord</a></Typography>
-                <Typography variant='body1'><a href='mailto:tkinsm@gmail.com'>Email</a></Typography>
-                <Typography variant='body1'><a href='https://www.github.com/timkinsman' target='_blank' rel='noreferrer'>GitHub</a></Typography>
-                <Typography variant='body1'><a href='https://www.linkedin.com/in/timkinsman' target='_blank' rel='noreferrer'>LinkedIn</a></Typography>
+                <Typography variant='body1'>
+                  <a
+                    href='https://discordapp.com/users/355321462032171009/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    Discord
+                  </a>
+                </Typography>
+                <Typography variant='body1'>
+                  <a href='mailto:tkinsm@gmail.com'>Email</a>
+                </Typography>
+                <Typography variant='body1'>
+                  <a href='https://www.github.com/timkinsman' target='_blank' rel='noreferrer'>
+                    GitHub
+                  </a>
+                </Typography>
+                <Typography variant='body1'>
+                  <a href='https://www.linkedin.com/in/timkinsman' target='_blank' rel='noreferrer'>
+                    LinkedIn
+                  </a>
+                </Typography>
               </Space>
             </Space>
           </Fade>
