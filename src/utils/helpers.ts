@@ -25,12 +25,7 @@ export const isBetween = (id: string, nextId: string): boolean => {
   const nextIdTop = $(nextId).offset()?.top;
   const windowHeight = $(window).height();
 
-  if (
-    typeof documentTop === 'number' &&
-    typeof idTop === 'number' &&
-    typeof nextIdTop === 'number' &&
-    typeof windowHeight === 'number'
-  ) {
+  if (documentTop && idTop && nextIdTop && windowHeight) {
     return documentTop >= idTop - windowHeight / 2 && documentTop < nextIdTop - windowHeight / 2;
   }
 
