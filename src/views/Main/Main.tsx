@@ -73,7 +73,10 @@ export const Main = () => {
                         <Typography variant='h5' style={{ color: 'inherit' }}>
                           {work.role} | {work.when}
                         </Typography>
-                        <Typography variant='body1' style={{ color: 'inherit' }}>
+                        <Typography
+                          variant='body1'
+                          style={{ color: 'inherit', whiteSpace: 'pre-line' }}
+                        >
                           {work.what}
                         </Typography>
                       </Space>
@@ -95,9 +98,10 @@ export const Main = () => {
             <Typography variant='h1'>about</Typography>
             <Space direction='vertical'>
               <Typography variant='h3'>Hi there!</Typography>
-              <Typography variant='h5'>
-                I&apos;m Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to
-                me
+              <Typography variant='h5' style={{ whiteSpace: 'pre-line' }}>
+                {`I'm Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to me.
+                
+                "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.`}
               </Typography>
               <Space>
                 <Typography variant='body1'>
@@ -139,6 +143,7 @@ export const Main = () => {
           transform: 'translateY(-50%)',
           display: 'flex',
           alignItems: 'center',
+          pointerEvents: page !== Page.work && page !== Page.about ? 'none' : undefined,
         }}
       >
         <Pagination />
