@@ -7,7 +7,7 @@ import $ from 'jquery';
 export const scrollTo = (id: string) => {
   $('html,body').animate(
     {
-      scrollTop: $(id).offset()?.top,
+      scrollTop: $(`#${id}`).offset()?.top,
     },
     'slow',
   );
@@ -21,8 +21,8 @@ export const scrollTo = (id: string) => {
  */
 export const isBetween = (id: string, nextId: string): boolean => {
   const documentTop = $(document).scrollTop();
-  const idTop = $(id).offset()?.top;
-  const nextIdTop = $(nextId).offset()?.top;
+  const idTop = $(`#${id}`).offset()?.top;
+  const nextIdTop = $(`#${nextId}`).offset()?.top;
   const windowHeight = $(window).height();
 
   if (

@@ -1,3 +1,11 @@
+export enum Page {
+  home = 'home',
+  work = 'work',
+  about = 'about',
+}
+
+export const pages = [Page.home, Page.work, Page.about];
+
 export const works = [
   {
     where: 'EatClub',

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { updatePage } from '../store/app';
+import { Page } from '../utils/constants';
 import { isBetween } from '../utils/helpers';
 import { useAppDispatch } from '../utils/hooks';
 import { AppLayoutProps } from './AppLayout.types';
@@ -27,21 +28,21 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
   };
 
   const onScroll = () => {
-    if (isBetween('#home', '#work')) {
+    if (isBetween(Page.home, Page.work)) {
       $('body').css(lightThemeCSS);
-      appDispatch(updatePage('home'));
-    } else if (isBetween('#work', '#about')) {
+      appDispatch(updatePage(Page.home));
+    } else if (isBetween(Page.work, Page.about)) {
       $('body').css(darkThemeCSS);
-      appDispatch(updatePage('work'));
+      appDispatch(updatePage(Page.work));
     } else {
       $('body').css(lightThemeCSS);
-      appDispatch(updatePage('about'));
+      appDispatch(updatePage(Page.about));
     }
   };
 
   useEffect(() => {
     $('body').css(lightThemeCSS);
-    appDispatch(updatePage('home'));
+    appDispatch(updatePage(Page.home));
   }, []);
 
   useEffect(() => {

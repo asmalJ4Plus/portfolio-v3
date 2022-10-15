@@ -2,7 +2,7 @@ import { Box, Fade, Pill, Space, Typography } from 'petald';
 import { useState } from 'react';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
 import { Panel } from '../../components/Panel';
-import { works } from '../../utils/constants';
+import { Page, works } from '../../utils/constants';
 import { scrollTo } from '../../utils/helpers';
 import { useAppSelector } from '../../utils/hooks';
 import useStyles from './Main.styles';
@@ -15,15 +15,15 @@ export const Main = () => {
 
   return (
     <>
-      <Panel id='home'>
-        <Fade appear={page === 'home'} slide='left'>
+      <Panel id={Page.home}>
+        <Fade appear={page === Page.home} slide='left'>
           <Box className={classes.image}>
             <TimySVG />
           </Box>
         </Fade>
         <Box className={classes.container}>
           <Fade
-            appear={page === 'home'}
+            appear={page === Page.home}
             slide='right'
             style={{
               alignItems: 'center',
@@ -42,9 +42,13 @@ export const Main = () => {
           </Fade>
         </Box>
       </Panel>
-      <Panel id='work'>
+      <Panel id={Page.work}>
         <Box className={classes.container}>
-          <Fade appear={page === 'work'} slide='right' style={{ maxWidth: '680px', width: '100%' }}>
+          <Fade
+            appear={page === Page.work}
+            slide='right'
+            style={{ maxWidth: '680px', width: '100%' }}
+          >
             <Space direction='vertical' gap='large' style={{ paddingBottom: '128px' }}>
               <Typography variant='h1' style={{ color: 'inherit' }}>
                 work
@@ -82,10 +86,10 @@ export const Main = () => {
           </Fade>
         </Box>
       </Panel>
-      <Panel id='about'>
+      <Panel id={Page.about}>
         <Box className={classes.container}>
           <Fade
-            appear={page === 'about'}
+            appear={page === Page.about}
             slide='right'
             style={{ maxWidth: '680px', width: '100%' }}
           >
@@ -125,7 +129,7 @@ export const Main = () => {
         </Box>
       </Panel>
       <Fade
-        appear={page === 'work' || page === 'about'}
+        appear={page === Page.work || page === Page.about}
         slide='down'
         style={{
           width: 'unset',
