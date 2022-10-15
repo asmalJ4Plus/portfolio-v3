@@ -101,7 +101,12 @@ export const Main = () => {
                 I&apos;m Tim Kinsman, a web developer based in Adelaide, Australia. Things happen to
                 me
               </Typography>
-              <Typography variant='body1'>Contact | Discord, Email, GitHub, LinkedIn</Typography>
+              <Space>
+                <Typography variant='body1'><a href='https://discordapp.com/users/355321462032171009/' target='_blank' rel='noreferrer'>Discord</a></Typography>
+                <Typography variant='body1'><a href='mailto:tkinsm@gmail.com'>Email</a></Typography>
+                <Typography variant='body1'><a href='https://www.github.com/timkinsman' target='_blank' rel='noreferrer'>GitHub</a></Typography>
+                <Typography variant='body1'><a href='https://www.linkedin.com/in/timkinsman' target='_blank' rel='noreferrer'>LinkedIn</a></Typography>
+              </Space>
             </Space>
           </Fade>
         </Box>

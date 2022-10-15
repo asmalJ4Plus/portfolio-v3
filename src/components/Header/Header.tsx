@@ -8,10 +8,10 @@ export const Header = () => {
   const { page } = useAppSelector((state) => state.app);
 
   return (
-    <Fade appear={page === 'home'} slide='down' style={{ display: 'flex', width: '100%' }}>
-      <Box className={classes.logo}>
+    <Fade appear={page === 'home'} slide='down' style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+      {/* <Box className={classes.logo}>
         <Typography variant='h4'>timkinsman</Typography>
-      </Box>
+      </Box> */}
       <Space gap='large'>
         <Typography
           variant='h4'
@@ -35,9 +35,9 @@ export const Header = () => {
           <Box onClick={() => scrollTo('#about')}>about</Box>
         </Typography>
       </Space>
-      <Box className={classes.music}>
+      {/* <Box className={classes.music}>
         <Typography variant='h4'>music</Typography>
-      </Box>
+      </Box> */}
     </Fade>
   );
 };
