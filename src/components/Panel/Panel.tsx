@@ -1,13 +1,8 @@
 import { Box } from 'petald';
-import React from 'react';
-import useStyles from './PanelStyles';
+import useStyles from './Panel.styles';
+import { PanelProps } from './Panel.types';
 
-type PanelProps = {
-  children: React.ReactNode;
-  id?: string;
-};
-
-const Panel = ({ children, id }: PanelProps) => {
+export const Panel = ({ children, id }: PanelProps) => {
   const classes = useStyles();
 
   return (
@@ -16,5 +11,3 @@ const Panel = ({ children, id }: PanelProps) => {
     </Box>
   );
 };
-
-export default Panel;

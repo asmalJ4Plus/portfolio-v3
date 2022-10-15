@@ -2,27 +2,12 @@ import { ThemeProvider } from 'petald';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import { createLogger } from 'redux-logger';
-import App from './App';
+import { App } from './App';
 import './index.css';
-import rootReducer from './reducers/rootReducer';
 import reportWebVitals from './reportWebVitals';
-import './satoshi.css';
+import store from './store';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error('Failed to find the root element');
-}
-
-const logger = createLogger({
-  collapsed: true,
-  diff: true,
-});
-const middlewares = [logger];
-const root = ReactDOM.createRoot(rootElement);
-const store = createStore(rootReducer, applyMiddleware(...middlewares));
-
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <Provider store={store}>

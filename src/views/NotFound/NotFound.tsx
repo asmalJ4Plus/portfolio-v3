@@ -1,9 +1,8 @@
 import { Box, Typography } from 'petald';
-import React from 'react';
-import Panel from '../Panel/Panel';
-import useStyles from './NotFoundStyles';
+import { Panel } from '../../components/Panel';
+import useStyles from './NotFound.styles';
 
-const NotFound = () => {
+export const NotFound = () => {
   const classes = useStyles();
 
   return (
@@ -14,5 +13,3 @@ const NotFound = () => {
     </Panel>
   );
 };
-
-export default NotFound;

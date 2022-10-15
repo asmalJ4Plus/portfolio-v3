@@ -1,16 +1,11 @@
-import { Box, Fade, Layout, Space, Typography } from 'petald';
-import React from 'react';
-import { connect } from 'react-redux';
-import { StoreState } from '../../reducers/rootReducer';
+import { Box, Fade, Space, Typography } from 'petald';
 import { scrollTo } from '../../utils/helpers';
-import useStyles from './HeaderStyles';
+import { useAppSelector } from '../../utils/hooks';
+import useStyles from './Header.styles';
 
-type HeaderProps = {
-  page?: string;
-};
-
-const Header = ({ page }: HeaderProps) => {
+export const Header = () => {
   const classes = useStyles();
+  const { page } = useAppSelector((state) => state.app);
 
   return (
     <Fade appear={page === 'home'} slide='down' style={{ display: 'flex', width: '100%' }}>
@@ -46,9 +41,3 @@ const Header = ({ page }: HeaderProps) => {
     </Fade>
   );
 };
-
-const mapStateToProps = (state: StoreState) => ({
-  page: state.app.page,
-});
-
-export default connect(mapStateToProps, null)(Header);

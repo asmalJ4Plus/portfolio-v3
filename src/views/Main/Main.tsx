@@ -1,21 +1,17 @@
 import { Box, Fade, Pill, Space, Typography } from 'petald';
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useState } from 'react';
 import { ReactComponent as ArrowDownSVG } from '../../assets/icons/arrow_down.svg';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
-import { works } from '../../context';
-import { StoreState } from '../../reducers/rootReducer';
+import { Panel } from '../../components/Panel';
+import { works } from '../../utils/constants';
 import { scrollTo } from '../../utils/helpers';
-import Panel from '../Panel/Panel';
-import useStyles from './MainStyles';
+import { useAppSelector } from '../../utils/hooks';
+import useStyles from './Main.styles';
 
-type MainProps = {
-  page?: string;
-};
-
-const Main = ({ page }: MainProps) => {
+export const Main = () => {
   const classes = useStyles();
   const [where, setWhere] = useState(works[0].where);
+  const { page } = useAppSelector((state) => state.app);
 
   return (
     <>
@@ -129,9 +125,3 @@ const Main = ({ page }: MainProps) => {
     </>
   );
 };
-
-const mapStateToProps = (state: StoreState) => ({
-  page: state.app.page,
-});
-
-export default connect(mapStateToProps, null)(Main);
