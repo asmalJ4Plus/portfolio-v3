@@ -48,7 +48,7 @@ export const Main = () => {
             slide='right'
             style={{ maxWidth: '680px', width: '100%' }}
           >
-            <Space direction='vertical' gap='large' style={{ paddingBottom: '128px' }}>
+            <Space direction='vertical' gap='large' style={{ paddingBottom: '300px' }}>
               <Typography variant='h1' style={{ color: 'inherit' }}>
                 work
               </Typography>
