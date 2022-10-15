@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
 import { Panel } from '../../components/Panel';
 import { Page, works } from '../../utils/constants';
-import { scrollTo } from '../../utils/helpers';
 import { useAppSelector } from '../../utils/hooks';
 import useStyles from './Main.styles';
 import { Pagination } from './Pagination/Pagination';
