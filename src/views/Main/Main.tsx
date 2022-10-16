@@ -5,7 +5,7 @@ import { Panel } from '../../components/Panel';
 import { Page, works } from '../../utils/constants';
 import { useAppSelector } from '../../utils/hooks';
 import useStyles from './Main.styles';
-import { Pagination } from './Pagination/Pagination';
+import { Pagination } from './Pagination';
 
 export const Main = () => {
   const classes = useStyles();

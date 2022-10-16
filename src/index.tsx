@@ -6,12 +6,13 @@ import { App } from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
+import theme from './theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
     </Provider>
