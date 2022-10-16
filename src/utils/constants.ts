@@ -43,6 +43,7 @@ export const works = [
   },
   {
     where: 'Freelancing',
+    // eslint-disable-next-line quotes
     link: "mailto:tkinsm@gmail.com?subject:Let's discuss freelancing!",
     role: 'React Developer',
     when: 'Nov 2020 - Present',
