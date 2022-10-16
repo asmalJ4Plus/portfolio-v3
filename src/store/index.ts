@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import appReducer from './app';
+import listeningToReducer from './listeningTo';
 
 const store = configureStore({
   reducer: {
     app: appReducer,
+    listeningTo: listeningToReducer,
   },
 });
 

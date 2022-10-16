@@ -1,9 +1,12 @@
 import { Box, Fade, Pill, Space, Typography } from 'petald';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ReactComponent as IconSpotify } from '../../assets/icons/icon_spotify.svg';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
 import { Panel } from '../../components/Panel';
+import { fetchListeningTo } from '../../store/listeningTo';
+import { ApiStatusCode } from '../../utils/apiHelpers';
 import { Page, works } from '../../utils/constants';
-import { useAppSelector } from '../../utils/hooks';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 import useStyles from './Main.styles';
 import { Pagination } from './Pagination';
 
@@ -11,6 +14,14 @@ export const Main = () => {
   const classes = useStyles();
   const [where, setWhere] = useState(works[0].where);
   const { page } = useAppSelector((state) => state.app);
+  const listeningTo = useAppSelector((state) => state.listeningTo);
+  const appDispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (listeningTo.status === ApiStatusCode.idle) {
+      appDispatch(fetchListeningTo());
+    }
+  }, []);
 
   return (
     <>
@@ -124,6 +135,35 @@ export const Main = () => {
                   </a>
                 </Typography>
               </Space>
+            </Space>
+          </Fade>
+        </Box>
+      </Panel>
+      <Panel id={Page.music}>
+        <Box className={classes.container}>
+          <Fade
+            appear={page === Page.music}
+            slide='right'
+            style={{ maxWidth: '680px', width: '100%' }}
+          >
+            <Space direction='vertical'>
+              <Typography variant='h1'>music</Typography>
+              <Typography variant='h5'>
+                I love music, i play guitar and bass, wow, i know, unheard of
+              </Typography>
+              {listeningTo.status === ApiStatusCode.succeeded && (
+                <Space style={{ alignItems: 'center' }} gap='small'>
+                  <Box className={classes.icon}>
+                    <IconSpotify />
+                  </Box>
+                  <Typography variant='body1'>
+                    Listening to{' '}
+                    <a href={listeningTo.data.link} target='_blank' rel='noreferrer'>
+                      {listeningTo.data.artist} - {listeningTo.data.track}
+                    </a>
+                  </Typography>
+                </Space>
+              )}
             </Space>
           </Fade>
         </Box>

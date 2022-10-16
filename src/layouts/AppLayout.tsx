@@ -34,9 +34,12 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
     } else if (isBetween(Page.work, Page.about)) {
       $('body').css(darkThemeCSS);
       appDispatch(updatePage(Page.work));
-    } else {
+    } else if (isBetween(Page.about, Page.music)) {
       $('body').css(lightThemeCSS);
       appDispatch(updatePage(Page.about));
+    } else {
+      $('body').css(darkThemeCSS);
+      appDispatch(updatePage(Page.music));
     }
   };
 

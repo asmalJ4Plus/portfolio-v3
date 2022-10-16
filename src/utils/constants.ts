@@ -2,9 +2,10 @@ export enum Page {
   home = 'home',
   work = 'work',
   about = 'about',
+  music = 'music',
 }
 
-export const pages = [Page.home, Page.work, Page.about];
+export const pages = [Page.home, Page.work, Page.about, Page.music];
 
 export const works = [
   {
