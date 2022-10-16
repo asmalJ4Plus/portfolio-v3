@@ -1,5 +1,6 @@
 const theme = {
   typography: {
+    color: 'inherit',
     h1: {
       fontWeight: 500,
     },

@@ -49,9 +49,7 @@ export const Main = () => {
             style={{ maxWidth: '680px', width: '100%' }}
           >
             <Space direction='vertical' gap='large' style={{ paddingBottom: '300px' }}>
-              <Typography variant='h1' style={{ color: 'inherit' }}>
-                work
-              </Typography>
+              <Typography variant='h1'>work</Typography>
               <Space>
                 {works.map((work, i) => (
                   <Pill
@@ -63,20 +61,19 @@ export const Main = () => {
                 ))}
               </Space>
               <Box>
-                {works.map((work, i) => (
-                  <Box style={{ position: 'absolute' }} key={i}>
+                {works.map((work) => (
+                  <Box style={{ position: 'absolute' }} key={work.where}>
                     <Fade appear={where === work.where} slide='right'>
                       <Space direction='vertical'>
-                        <Typography variant='h3' style={{ color: 'inherit' }}>
+                        <Typography variant='h3'>
+                          {/* <a href={work.link} target='_blank' rel='noreferrer'> */}
                           {work.where}
+                          {/* </a> */}
                         </Typography>
-                        <Typography variant='h5' style={{ color: 'inherit' }}>
+                        <Typography variant='h5'>
                           {work.role} | {work.when}
                         </Typography>
-                        <Typography
-                          variant='body1'
-                          style={{ color: 'inherit', whiteSpace: 'pre-line' }}
-                        >
+                        <Typography variant='body1' style={{ whiteSpace: 'pre-line' }}>
                           {work.what}
                         </Typography>
                       </Space>
@@ -132,7 +129,7 @@ export const Main = () => {
         </Box>
       </Panel>
       <Fade
-        appear={page === Page.work || page === Page.about}
+        appear={page !== Page.home}
         slide='down'
         style={{
           width: 'unset',
@@ -143,7 +140,7 @@ export const Main = () => {
           transform: 'translateY(-50%)',
           display: 'flex',
           alignItems: 'center',
-          pointerEvents: page !== Page.work && page !== Page.about ? 'none' : undefined,
+          pointerEvents: page == Page.home ? 'none' : undefined,
         }}
       >
         <Pagination />
