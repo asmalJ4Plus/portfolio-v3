@@ -1,4 +1,4 @@
-import { Box, Fade, Pill, Space, Typography } from 'petald';
+import { Box, Fade, Pill, Skeleton, Space, Typography } from 'petald';
 import { useEffect, useState } from 'react';
 import { ReactComponent as IconSpotify } from '../../assets/icons/icon_spotify.svg';
 import { ReactComponent as TimySVG } from '../../assets/images/timy.svg';
@@ -109,7 +109,7 @@ export const Main = () => {
               <Typography variant='h5' style={{ whiteSpace: 'pre-line' }}>
                 {`I'm Tim Kinsman, a React web developer at EatClub based in Adelaide, Australia.
                 
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.`}
+                I am fully proficient in TypeScript and JavascriptI have some pretty sick Tech Deck moves, hire me and you just might find out.`}
               </Typography>
               <Space>
                 <Typography variant='body1'>
@@ -153,19 +153,28 @@ export const Main = () => {
                 
                 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.`}
               </Typography>
-              {listeningTo.status === ApiStatusCode.succeeded && (
-                <Space style={{ alignItems: 'center' }} gap='small'>
-                  <Box className={classes.icon}>
-                    <IconSpotify />
-                  </Box>
-                  <Typography variant='body1'>
-                    Listening to{' '}
-                    <a href={listeningTo.data.link} target='_blank' rel='noreferrer'>
-                      {listeningTo.data.artist} - {listeningTo.data.track}
-                    </a>
-                  </Typography>
-                </Space>
-              )}
+              <Space style={{ alignItems: 'center' }} gap='small'>
+                <Box className={classes.icon}>
+                  <IconSpotify />
+                </Box>
+                <Typography variant='body1'>
+                  {listeningTo.status !== ApiStatusCode.pending ? (
+                    <Skeleton
+                      width={200}
+                      height={16}
+                      variant='rounded'
+                      style={{ margin: '4px 0' }}
+                    />
+                  ) : (
+                    <>
+                      Listening to{' '}
+                      <a href={listeningTo.data.link} target='_blank' rel='noreferrer'>
+                        {listeningTo.data.artist} - {listeningTo.data.track}
+                      </a>
+                    </>
+                  )}
+                </Typography>
+              </Space>
             </Space>
           </Fade>
         </Box>

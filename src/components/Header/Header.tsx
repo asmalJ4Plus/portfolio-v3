@@ -21,7 +21,7 @@ export const Header = () => {
         {pages.map((pageToView) => (
           <Typography
             key={pageToView}
-            variant='h4'
+            variant='h5'
             className={classes.page}
             style={{ opacity: page === pageToView ? '1 !important' : 0.4 }}
           >
