@@ -32,7 +32,10 @@ export const Work = () => {
             </Space>
             <Box>
               {works.map((work) => (
-                <Box style={{ position: 'absolute' }} key={work.where}>
+                <Box
+                  style={{ position: 'absolute', zIndex: where === work.where ? 99 : 1 }}
+                  key={work.where}
+                >
                   <Fade appear={where === work.where} slide='right'>
                     <Space direction='vertical'>
                       <Typography variant='h3'>

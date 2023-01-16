@@ -7,7 +7,7 @@ body {
   scrollbar-width: none; /* Firefox */
 
   transition: background-color 0.25s, color 0.25s;
-  user-select: none;
+  /* user-select: none; */
 
   text-transform: lowercase !important;
 }

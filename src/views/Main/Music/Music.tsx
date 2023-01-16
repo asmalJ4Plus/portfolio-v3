@@ -4,7 +4,7 @@ import { ReactComponent as IconSpotify } from '../../../assets/icons/icon_spotif
 import { Panel } from '../../../components/Panel';
 import { fetchListeningTo } from '../../../store/listeningTo';
 import { ApiStatusCode } from '../../../utils/apiHelpers';
-import { Page } from '../../../utils/constants';
+import { Page, music } from '../../../utils/constants';
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
 import useStyles from '../Main.styles';
 
@@ -31,9 +31,7 @@ export const Music = () => {
           <Space direction='vertical'>
             <Typography variant='h1'>music</Typography>
             <Typography variant='h5' style={{ whiteSpace: 'pre-line' }}>
-              {`Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-                
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.`}
+              {music}
             </Typography>
             <Space style={{ alignItems: 'center' }} gap='small'>
               <Box className={classes.icon}>

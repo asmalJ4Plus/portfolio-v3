@@ -1,8 +1,15 @@
 import { Box, Fade, Space, Typography } from 'petald';
 import { Panel } from '../../../components/Panel';
-import { Page } from '../../../utils/constants';
+import { Page, about } from '../../../utils/constants';
 import { useAppSelector } from '../../../utils/hooks';
 import useStyles from '../Main.styles';
+
+const links = [
+  { label: 'Discord', to: 'https://discordapp.com/users/355321462032171009/' },
+  { label: 'Email', to: 'mailto:tkinsm@gmail.com' },
+  { label: 'GitHub', to: 'https://www.github.com/timkinsman' },
+  { label: 'LinkedIn', to: 'https://www.linkedin.com/in/timkinsman' },
+];
 
 export const About = () => {
   const classes = useStyles();
@@ -18,35 +25,18 @@ export const About = () => {
         >
           <Typography variant='h1'>about</Typography>
           <Space direction='vertical'>
-            <Typography variant='h3'>Hi there!</Typography>
+            <Typography variant='h3'>hi there!</Typography>
             <Typography variant='h5' style={{ whiteSpace: 'pre-line' }}>
-              {`I'm Tim Kinsman, a React web developer at EatClub based in Adelaide, Australia.
-                
-                I am fully proficient in TypeScript and JavascriptI have some pretty sick Tech Deck moves, hire me and you just might find out.`}
+              {about}
             </Typography>
             <Space>
-              <Typography variant='body1'>
-                <a
-                  href='https://discordapp.com/users/355321462032171009/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  Discord
-                </a>
-              </Typography>
-              <Typography variant='body1'>
-                <a href='mailto:tkinsm@gmail.com'>Email</a>
-              </Typography>
-              <Typography variant='body1'>
-                <a href='https://www.github.com/timkinsman' target='_blank' rel='noreferrer'>
-                  GitHub
-                </a>
-              </Typography>
-              <Typography variant='body1'>
-                <a href='https://www.linkedin.com/in/timkinsman' target='_blank' rel='noreferrer'>
-                  LinkedIn
-                </a>
-              </Typography>
+              {links.map((link) => (
+                <Typography variant='body1' key={link.label}>
+                  <a href={link.to} target='_blank' rel='noreferrer'>
+                    {link.label}
+                  </a>
+                </Typography>
+              ))}
             </Space>
           </Space>
         </Fade>
