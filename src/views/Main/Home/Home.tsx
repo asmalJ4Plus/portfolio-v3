@@ -35,10 +35,10 @@ export const Home = () => {
             tim kinsman
           </Typography>
           <Typography variant={isDesktop ? 'h2' : 'h3'} style={{ textAlign: 'center' }}>
-            based in adelaide, australia
+            Based in Adelaide, Australia
           </Typography>
           <Typography variant={isDesktop ? 'h2' : 'h3'} style={{ textAlign: 'center' }}>
-            front-end dev at{' '}
+            Front-end dev at{' '}
             <a href='https://eatclub.com.au/' target='_blank' rel='noreferrer'>
               EatClub
             </a>

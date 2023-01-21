@@ -19,7 +19,7 @@ body {
   transition: background-color 0.25s, color 0.25s;
   /* user-select: none; */
 
-  text-transform: lowercase !important;
+  /* text-transform: lowercase !important; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -49,9 +49,9 @@ export const works = [
     when: 'Jan 2022 - Present',
     what: (
       <>
-        {`As a seasoned React web developer, I've created a powerful and growing design system called Petal Design. This system is used in all my personal React projects.
+        {`As an experienced React web developer, I've created a powerful and growing design system called Petal Design. This system is used in all my personal React projects, including this portfolio!
         
-        The system is inspired by popular design systems such as Ant Design and Material-UI, and has been tailored to my specific needs and preferences. Petal Design allows for faster and more efficient development, as well as a consistent look and feel across all projects. With Petal Design.
+        The system is inspired by popular design systems such as Ant Design and Material-UI, and has been tailored to my specific needs and preferences. Petal Design allows for faster and more efficient development, as well as a consistent look and feel across all projects.
         
         Check it out here, `}
         <a href='https://github.com/timkinsman/petal-design' target='_blank' rel='noreferrer'>
@@ -80,9 +80,7 @@ export const about = `I'm Tim Kinsman, an experienced React front-end developer 
   new Date().getFullYear() - 2020
 } years of experience in the industry, I have a strong background in developing high-performing and visually appealing web applications using the latest technologies.
 
-In my spare time, I indulge in my passion for music by playing instruments, coding and watching/playing video games.
-
-Let's get in touch!`;
+In my spare time, I indulge in my passion for music by playing instruments, coding and watching/playing video games.`;
 
 /**
  * Used in `Music.tsx`

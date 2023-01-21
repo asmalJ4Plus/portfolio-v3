@@ -25,7 +25,7 @@ export const About = () => {
         >
           <Typography variant='h1'>about</Typography>
           <Space direction='vertical'>
-            <Typography variant='h3'>hi there!</Typography>
+            <Typography variant='h3'>Hello!</Typography>
             <Typography variant='h5' style={{ whiteSpace: 'pre-line' }}>
               {about}
             </Typography>
