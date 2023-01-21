@@ -20,7 +20,7 @@ export const Work = () => {
         >
           <Space direction='vertical' gap='large' style={{ paddingBottom: '300px' }}>
             <Typography variant='h1'>work</Typography>
-            <Space>
+            <Space style={{ flexWrap: 'wrap' }}>
               {works.map((work, i) => (
                 <Pill
                   key={i}

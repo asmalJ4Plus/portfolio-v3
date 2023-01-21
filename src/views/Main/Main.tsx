@@ -1,6 +1,6 @@
 import { Fade } from 'petald';
 import { Page } from '../../utils/constants';
-import { useAppSelector } from '../../utils/hooks';
+import useMediaQuery, { useAppSelector } from '../../utils/hooks';
 import { About } from './About';
 import { Home } from './Home';
 import { Music } from './Music';
@@ -10,6 +10,8 @@ import { Work } from './Work';
 export const Main = () => {
   const { page } = useAppSelector((state) => state.app);
 
+  const isDesktop = useMediaQuery('(min-width: 960px)');
+
   return (
     <>
       <Home />
@@ -17,23 +19,25 @@ export const Main = () => {
       <About />
       <Music />
 
-      <Fade
-        appear={page !== Page.home}
-        slide='down'
-        style={{
-          width: 'unset',
-          position: 'fixed',
-          top: '50%',
-          right: '64px',
-          height: '64px',
-          transform: 'translateY(-50%)',
-          display: 'flex',
-          alignItems: 'center',
-          pointerEvents: page == Page.home ? 'none' : undefined,
-        }}
-      >
-        <Pagination />
-      </Fade>
+      {isDesktop && (
+        <Fade
+          appear={page !== Page.home}
+          slide='down'
+          style={{
+            width: 'unset',
+            position: 'fixed',
+            top: '50%',
+            right: '64px',
+            height: '64px',
+            transform: 'translateY(-50%)',
+            display: 'flex',
+            alignItems: 'center',
+            pointerEvents: page == Page.home ? 'none' : undefined,
+          }}
+        >
+          <Pagination />
+        </Fade>
+      )}
     </>
   );
 };

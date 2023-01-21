@@ -58,11 +58,11 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
 
   return (
     <Layout>
-      <Layout.Header fixed>
+      <Layout.Header fixed style={{ padding: '0 12px' }}>
         <Header />
       </Layout.Header>
       <Layout.Content>{children}</Layout.Content>
-      <Layout.Footer>
+      <Layout.Footer style={{ padding: '0 12px' }}>
         <Footer />
       </Layout.Footer>
     </Layout>
